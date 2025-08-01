@@ -38,12 +38,16 @@
       border-bottom: 2px solid #e03e2f;
       padding-bottom: 6px;
     }
-    .module-list {
+    h3 {
+      color: #e03e2f;
+      margin-top: 40px;
+    }
+    .module-list, .bonus-list, .faq-list {
       list-style: none;
       padding: 0;
       margin: 0;
     }
-    .module-list li {
+    .module-list li, .faq-list li {
       background: #222;
       margin-bottom: 15px;
       padding: 15px 20px;
@@ -51,14 +55,9 @@
       box-shadow: 0 0 6px #e03e2f44;
       transition: background 0.3s;
     }
-    .module-list li:hover {
+    .module-list li:hover, .faq-list li:hover {
       background: #e03e2f22;
       cursor: default;
-    }
-    .bonus-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
     }
     .bonus-list li {
       background: #2a2a2a;
@@ -74,6 +73,24 @@
       margin: 50px 0 20px;
       font-size: 1rem;
       color: #888;
+    }
+    .whatsapp-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #25d366;
+      color: white !important;
+      font-weight: bold;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      margin: 40px 0;
+      transition: background 0.3s ease;
+    }
+    .whatsapp-button:hover {
+      background: #1ebe57;
+    }
+    .button-container {
+      text-align: center;
     }
   </style>
 </head>
@@ -95,7 +112,7 @@
     </ul>
     <p>Essa mentoria não é para quem busca atalho.<br />
     É pra quem busca libertação definitiva do sistema de mentiras que domina o marketing digital hoje.</p>
-    
+
     <h3>✅ Essa mentoria é para você se…</h3>
     <ul>
       <li>Você já tentou seguir fórmulas milagrosas e se frustrou</li>
@@ -162,6 +179,37 @@
       <li><strong>Lucro Estratégico:</strong> sem depender de lançamentos</li>
       <li><strong>Independência:</strong> você no controle do jogo</li>
     </ul>
+
+    <h2>FAQ — Perguntas Frequentes</h2>
+    <ul class="faq-list">
+      <li>
+        <strong>Essa mentoria é pra quem está começando?</strong><br />
+        Sim. Ela foi feita pra quem quer construir autoridade real do zero, mesmo sem experiência ou seguidores.
+      </li>
+      <li>
+        <strong>Vai ter suporte se eu tiver dúvida?</strong><br />
+        Sim. Você vai ter acesso direto ao mentor e ao grupo fechado para tirar dúvidas e receber orientação.
+      </li>
+      <li>
+        <strong>Vai me obrigar a aparecer ou vender no Instagram?</strong><br />
+        Não. Aqui você aprende a construir autoridade do seu jeito, com verdade, sem depender de dancinha ou exposição forçada.
+      </li>
+      <li>
+        <strong>E se eu não gostar da mentoria?</strong><br />
+        Você tem garantia de satisfação. Se não fizer sentido, você pode sair. Mas duvido que queira depois do primeiro módulo.
+      </li>
+      <li>
+        <strong>Quanto tempo dura a mentoria?</strong><br />
+        O acesso é contínuo com atualizações. Você faz no seu ritmo, com missões e acompanhamento.
+      </li>
+    </ul>
+
+    <!-- Botão WhatsApp -->
+    <div class="button-container">
+      <a href="https://wa.me/5534997968526" target="_blank" rel="noopener noreferrer" class="whatsapp-button">
+        Contato via WhatsApp
+      </a>
+    </div>
 
     <footer>
       <p>Você não entrou aqui pra brincar de marketing.<br />
