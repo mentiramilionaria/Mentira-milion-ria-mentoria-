@@ -4,161 +4,317 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Mentoria Mentira Milionária</title>
+  <!-- Google Tag Manager -->
+  <script>
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W7F8RBZX');
+  </script>
+  <!-- End Google Tag Manager -->
+
   <style>
+    /* Reset e básico */
+    * {
+      box-sizing: border-box;
+    }
     body {
-      margin: 0; padding: 0; font-family: Arial, sans-serif;
+      margin: 0; padding: 0; font-family: 'Arial', sans-serif;
       background-color: #121212; color: #f0f0f0;
       line-height: 1.6;
+      overflow-x: hidden;
     }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* Container central */
+    .container {
+      max-width: 900px;
+      margin: 60px auto 100px;
+      padding: 0 20px;
+      animation: fadeInDown 0.8s ease forwards;
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    @keyframes fadeInDown {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Cabeçalho */
     header {
-      background: #1f1f1f;
-      padding: 40px 20px;
       text-align: center;
-      border-bottom: 2px solid #e03e2f;
+      margin-bottom: 40px;
     }
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
+      font-size: 3rem;
       color: #e03e2f;
+      margin: 0;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
     header p {
-      font-size: 1.4rem;
+      font-size: 1.6rem;
       margin-top: 10px;
       font-style: italic;
       color: #bbb;
     }
-    section {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h2, h3 {
-      color: #e03e2f;
-      margin-bottom: 10px;
-      border-bottom: 2px solid #e03e2f;
-      padding-bottom: 6px;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-    ul li {
-      background: #222;
-      margin-bottom: 10px;
-      padding: 10px 15px;
-      border-radius: 6px;
-      box-shadow: 0 0 6px #e03e2f44;
-    }
+
+    /* Botão WhatsApp */
     .button-container {
       text-align: center;
       margin: 40px 0;
     }
     .whatsapp-button {
-      display: inline-block;
-      padding: 15px 30px;
       background: #25d366;
       color: white !important;
-      font-weight: bold;
-      border-radius: 8px;
-      text-decoration: none;
+      font-weight: 700;
+      padding: 16px 36px;
+      border-radius: 10px;
       font-size: 1.3rem;
-      transition: background 0.3s ease;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+      box-shadow: 0 5px 15px #25d366aa;
+      user-select: none;
     }
     .whatsapp-button:hover {
       background: #1ebe57;
+      box-shadow: 0 6px 20px #1ebe5799;
     }
+
+    /* Texto principal e seções */
+    h2, h3 {
+      color: #e03e2f;
+      margin-bottom: 12px;
+      border-bottom: 3px solid #e03e2f;
+      padding-bottom: 8px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 30px;
+    }
+    ul li {
+      background: #222;
+      margin-bottom: 12px;
+      padding: 12px 18px;
+      border-radius: 8px;
+      box-shadow: 0 0 8px #e03e2f44;
+      font-size: 1.1rem;
+    }
+
+    /* Formulário backup email */
+    form {
+      max-width: 400px;
+      margin: 30px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    form label {
+      font-weight: 700;
+      font-size: 1.1rem;
+      margin-bottom: 4px;
+    }
+    form input[type="email"] {
+      padding: 12px 15px;
+      font-size: 1.1rem;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      box-shadow: inset 0 0 5px #e03e2f88;
+      background-color: #222;
+      color: #eee;
+    }
+    form button {
+      background-color: #e03e2f;
+      color: white;
+      font-weight: 700;
+      padding: 14px 0;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px #e03e2fbb;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    form button:hover {
+      background-color: #b32c23;
+    }
+
+    /* Mensagem de sucesso */
+    #success-message {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 1.2rem;
+      color: #4BB543;
+      display: none;
+      font-weight: 700;
+    }
+
+    /* FAQ */
+    .faq-item {
+      background: #222;
+      margin-bottom: 12px;
+      border-radius: 8px;
+      box-shadow: 0 0 6px #e03e2f44;
+    }
+    .faq-question {
+      cursor: pointer;
+      padding: 14px 20px;
+      font-weight: 700;
+      position: relative;
+      user-select: none;
+    }
+    .faq-question::after {
+      content: "+";
+      position: absolute;
+      right: 20px;
+      font-size: 1.6rem;
+      transition: transform 0.3s ease;
+    }
+    .faq-question.active::after {
+      content: "-";
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      padding: 0 20px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+      color: #ccc;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .faq-answer.open {
+      padding: 14px 20px;
+      max-height: 500px;
+    }
+
+    /* Rodapé */
     footer {
       text-align: center;
-      margin: 50px 0 20px;
+      margin-top: 80px;
       font-size: 1rem;
       color: #888;
+      user-select: none;
+      padding-bottom: 40px;
+    }
+
+    /* Responsivo */
+    @media(max-width: 480px) {
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1.2rem;
+      }
+      .whatsapp-button {
+        font-size: 1.1rem;
+        padding: 14px 24px;
+      }
+      form {
+        max-width: 100%;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Mentoria Mentira Milionária</h1>
-    <p>Transformando Vítimas do Marketing em Máquinas de Autoridade Real</p>
-  </header>
+  <!-- Google Tag Manager (noscript) -->
+  <noscript>
+    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7F8RBZX"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>
+  </noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-  <section>
-    <h2>Apresentação Oficial</h2>
-    <p><strong>🚫 O que você NÃO vai encontrar aqui:</strong></p>
-    <ul>
-      <li>Promessas de ficar rico em 7 dias</li>
-      <li>Prints falsos de 6 em 7</li>
-      <li>Carros alugados e mansões falsas</li>
-      <li>Fórmulas prontas copiadas de gringo</li>
-      <li>Gatilhos mentais para te manipular</li>
-    </ul>
-    <p>Essa mentoria não é para quem busca atalho.<br />
-    É pra quem busca libertação definitiva do sistema de mentiras que domina o marketing digital hoje.</p>
-    
-    <h3>✅ Essa mentoria é para você se…</h3>
-    <ul>
-      <li>Você já tentou seguir fórmulas milagrosas e se frustrou</li>
-      <li>Está cansado de investir tempo e dinheiro em promessas vazias</li>
-      <li>Sente que tem potencial, mas está perdido no meio de tanto conteúdo</li>
-      <li>Quer construir autoridade real, mesmo que esteja começando do zero</li>
-      <li>Tem vergonha de vender porque sabe que tem algo errado no mercado</li>
-      <li>Quer mostrar ao mundo a sua verdade, mas não sabe por onde começar</li>
-    </ul>
+  <div class="container">
+    <header>
+      <h1>Mentoria Mentira Milionária</h1>
+      <p>Transformando Vítimas do Marketing em Máquinas de Autoridade Real</p>
+    </header>
 
-    <h3>⚠️ Se você ignorar isso agora...</h3>
-    <ul>
-      <li>Vai continuar pulando de curso em curso, sem resultado</li>
-      <li>Vai gastar energia tentando parecer alguém que não é</li>
-      <li>Vai perder tempo precioso seguindo gente que mente por cliques</li>
-      <li>Vai continuar frustrado por não conseguir vender com verdade</li>
-      <li>Vai ver outras pessoas passando por cima de você com mentiras — e ficando ricas com isso</li>
-    </ul>
+    <section>
+      <h2>Baixe o eBook gratuito e receba os primeiros segredos.</h2>
+      <p>Se fizer sentido para você, a mentoria te espera para levar seu negócio para outro nível.</p>
 
-    <h3>💥 O que você vai conquistar dentro da mentoria</h3>
-    <ul>
-      <li>Clareza total do que funciona e do que é enganação</li>
-      <li>Estratégias reais de construção de autoridade</li>
-      <li>Técnicas de persuasão baseadas na verdade e prova</li>
-      <li>Posicionamento sólido sem depender de ostentação</li>
-      <li>Modelos prontos e adaptáveis para aplicar no seu negócio</li>
-      <li>Uma nova identidade profissional com respeito e influência</li>
-    </ul>
+      <div class="button-container">
+        <a 
+          href="https://wa.me/5534997968526?text=Ol%C3%A1%2C%20quero%20garantir%20meu%20acesso%20ao%20Grupo%20VIP%20de%20Pr%C3%A9-venda%20da%20Mentoria%20Mentira%20Milion%C3%A1ria.%20Gostaria%20de%20saber%20mais%20sobre%20os%20b%C3%B4nus%20e%20conte%C3%BAdos%20exclusivos." 
+          target="_blank" rel="noopener noreferrer" class="whatsapp-button"
+        >
+          GARANTIR MEU ACESSO PELO WHATSAPP
+        </a>
+      </div>
 
-    <h3>🧠 Como funciona a entrega da mentoria</h3>
-    <ul>
-      <li>Acesso a todos os módulos direto na plataforma</li>
-      <li>Encontros estratégicos para tirar dúvidas ao vivo</li>
-      <li>Grupo fechado de alunos com acesso direto ao mentor</li>
-      <li>Suporte psicológico e técnico para travas mentais e operacionais</li>
-      <li>Missões práticas com prazos e acompanhamento</li>
-      <li>Ferramentas bônus para acelerar seus resultados</li>
-    </ul>
+      <h3>Não conseguiu pelo WhatsApp? Receba o eBook por e-mail:</h3>
+      <form id="backup-form">
+        <label for="email">Digite seu melhor e-mail:</label>
+        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
+        <button type="submit">Enviar Link por E-mail</button>
+      </form>
+      <div id="success-message">Link enviado com sucesso! Verifique seu e-mail.</div>
 
-    <h2>E-book Exclusivo: Mentira Milionária (Versão Premium)</h2>
-    <p>Para você mergulhar fundo e começar a transformar sua visão sobre marketing digital, disponibilizamos o eBook completo <strong>Mentira Milionária – Versão Estendida e Aprofundada</strong>.</p>
-    <p>Este material é essencial para entender os bastidores do mercado e construir autoridade real, sem enrolação.</p>
-    <div class="button-container">
-      <a href="/caminho/para/o/arquivo/MentiraMilionaria_VersaoPremium.pdf" 
-         download 
-         class="whatsapp-button" 
-         style="background:#e03e2f;">
-         Baixar eBook Premium
-      </a>
-    </div>
+      <h2>Perguntas Frequentes</h2>
 
-    <h2>FAQ — Perguntas Frequentes</h2>
-    <ul>
-      <li><strong>Essa mentoria é pra quem está começando?</strong><br />Sim. Ela foi feita pra quem quer construir autoridade real do zero, mesmo sem experiência ou seguidores.</li>
-      <li><strong>Vai ter suporte se eu tiver dúvida?</strong><br />Sim. Você vai ter acesso direto ao mentor e ao grupo fechado para tirar dúvidas e receber orientação.</li>
-      <li><strong>Vai me obrigar a aparecer ou vender no Instagram?</strong><br />Não. Aqui você aprende a construir autoridade do seu jeito, com verdade, sem depender de dancinha ou exposição forçada.</li>
-      <li><strong>E se eu não gostar da mentoria?</strong><br />Você tem garantia de satisfação. Se não fizer sentido, você pode sair. Mas duvido que queira depois do primeiro módulo.</li>
-      <li><strong>Quanto tempo dura a mentoria?</strong><br />O acesso é contínuo com atualizações. Você faz no seu ritmo, com missões e acompanhamento.</li>
-    </ul>
+      <div class="faq-item">
+        <div class="faq-question">Essa mentoria é pra quem está começando?</div>
+        <div class="faq-answer">Sim. Ela foi feita pra quem quer construir autoridade real do zero, mesmo sem experiência ou seguidores.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Vai ter suporte se eu tiver dúvida?</div>
+        <div class="faq-answer">Sim. Você terá acesso direto ao mentor e ao grupo fechado para tirar dúvidas e receber orientação.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Vou ter que aparecer ou vender no Instagram?</div>
+        <div class="faq-answer">Não. Aqui você aprende a construir autoridade do seu jeito, com verdade, sem precisar de dancinhas ou exposição forçada.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">E se eu não gostar da mentoria?</div>
+        <div class="faq-answer">Você tem garantia de satisfação. Se não fizer sentido, pode sair. Mas dificilmente vai querer depois do primeiro módulo.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Quanto tempo dura a mentoria?</div>
+        <div class="faq-answer">O acesso é contínuo com atualizações. Você faz no seu ritmo, com missões e acompanhamento.</div>
+      </div>
+
+    </section>
 
     <footer>
-      <p>Você não entrou aqui pra brincar de marketing.<br />
-      Entrou pra dominar.<br />
-      <strong>Agora é contigo.</strong></p>
+      <p>Você não entrou aqui pra brincar de marketing.<br />Entrou pra dominar.<br /><strong>Agora é contigo.</strong></p>
     </footer>
-  </section>
-</body>
-</html>
+  </div>
+
+  <script>
+    // FAQ toggle
+    const faqs = document.querySelectorAll('.faq-question');
+    faqs.forEach(faq => {
+      faq.addEventListener('click', () => {
+        faq.classList.toggle('active');
+        const answer = faq.nextElementSibling;
+        if (answer.classList.contains('open')) {
+          answer.classList.remove('open');
+        } else {
+          answer.classList.add('open');
+        }
+      });
+    });
+
+    // Form submission simulation (since formsubmit.co is external)
+    const form = document.getElementById('backup-form');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const email
