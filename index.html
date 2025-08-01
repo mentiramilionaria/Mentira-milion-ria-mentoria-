@@ -1,320 +1,191 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mentoria Mentira Milionária</title>
-  <!-- Google Tag Manager -->
-  <script>
-    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-W7F8RBZX');
-  </script>
-  <!-- End Google Tag Manager -->
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mentira Milionária</title>
+  <meta name="description" content="A verdade que ninguém te contou sobre marketing digital, autoridade e poder digital." />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" />
+  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W7F8RBZX"></script>
   <style>
-    /* Reset e básico */
-    * {
-      box-sizing: border-box;
-    }
     body {
-      margin: 0; padding: 0; font-family: 'Arial', sans-serif;
-      background-color: #121212; color: #f0f0f0;
-      line-height: 1.6;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      background: #000;
+      color: #fff;
       overflow-x: hidden;
     }
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    /* Container central */
-    .container {
-      max-width: 900px;
-      margin: 60px auto 100px;
-      padding: 0 20px;
-      animation: fadeInDown 0.8s ease forwards;
-      opacity: 0;
-      transform: translateY(-30px);
-    }
-    @keyframes fadeInDown {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    /* Cabeçalho */
     header {
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('fundo.jpg') no-repeat center center;
+      background-size: cover;
+      padding: 100px 20px 60px;
       text-align: center;
-      margin-bottom: 40px;
     }
-    header h1 {
-      font-size: 3rem;
-      color: #e03e2f;
+    h1 {
+      font-size: 3em;
       margin: 0;
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: 2px;
+      color: #fff;
     }
-    header p {
-      font-size: 1.6rem;
+    h2 {
+      font-size: 1.5em;
       margin-top: 10px;
-      font-style: italic;
-      color: #bbb;
+      color: #f0f0f0;
     }
-
-    /* Botão WhatsApp */
-    .button-container {
-      text-align: center;
-      margin: 40px 0;
-    }
-    .whatsapp-button {
+    .btn-whatsapp {
       background: #25d366;
-      color: white !important;
-      font-weight: 700;
-      padding: 16px 36px;
-      border-radius: 10px;
-      font-size: 1.3rem;
-      display: inline-block;
-      transition: background-color 0.3s ease;
-      box-shadow: 0 5px 15px #25d366aa;
-      user-select: none;
-    }
-    .whatsapp-button:hover {
-      background: #1ebe57;
-      box-shadow: 0 6px 20px #1ebe5799;
-    }
-
-    /* Texto principal e seções */
-    h2, h3 {
-      color: #e03e2f;
-      margin-bottom: 12px;
-      border-bottom: 3px solid #e03e2f;
-      padding-bottom: 8px;
-      font-weight: 700;
-      text-transform: uppercase;
-    }
-    p {
-      margin-bottom: 20px;
-      font-size: 1.1rem;
-    }
-    ul {
-      list-style: none;
-      padding-left: 0;
-      margin-bottom: 30px;
-    }
-    ul li {
-      background: #222;
-      margin-bottom: 12px;
-      padding: 12px 18px;
-      border-radius: 8px;
-      box-shadow: 0 0 8px #e03e2f44;
-      font-size: 1.1rem;
-    }
-
-    /* Formulário backup email */
-    form {
-      max-width: 400px;
-      margin: 30px auto;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-    form label {
-      font-weight: 700;
-      font-size: 1.1rem;
-      margin-bottom: 4px;
-    }
-    form input[type="email"] {
-      padding: 12px 15px;
-      font-size: 1.1rem;
-      border-radius: 6px;
-      border: none;
-      outline: none;
-      box-shadow: inset 0 0 5px #e03e2f88;
-      background-color: #222;
-      color: #eee;
-    }
-    form button {
-      background-color: #e03e2f;
       color: white;
-      font-weight: 700;
-      padding: 14px 0;
-      font-size: 1.2rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      box-shadow: 0 5px 15px #e03e2fbb;
-      transition: background-color 0.3s ease;
-      user-select: none;
-    }
-    form button:hover {
-      background-color: #b32c23;
-    }
-
-    /* Mensagem de sucesso */
-    #success-message {
-      text-align: center;
+      padding: 15px 25px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
+      border-radius: 10px;
+      display: inline-block;
       margin-top: 20px;
-      font-size: 1.2rem;
-      color: #4BB543;
-      display: none;
-      font-weight: 700;
     }
-
-    /* FAQ */
-    .faq-item {
-      background: #222;
-      margin-bottom: 12px;
-      border-radius: 8px;
-      box-shadow: 0 0 6px #e03e2f44;
-    }
-    .faq-question {
-      cursor: pointer;
-      padding: 14px 20px;
-      font-weight: 700;
-      position: relative;
-      user-select: none;
-    }
-    .faq-question::after {
-      content: "+";
-      position: absolute;
-      right: 20px;
-      font-size: 1.6rem;
-      transition: transform 0.3s ease;
-    }
-    .faq-question.active::after {
-      content: "-";
-    }
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      padding: 0 20px;
-      font-size: 1.1rem;
-      line-height: 1.5;
-      color: #ccc;
-      transition: max-height 0.4s ease, padding 0.4s ease;
-    }
-    .faq-answer.open {
-      padding: 14px 20px;
-      max-height: 500px;
-    }
-
-    /* Rodapé */
-    footer {
+    .container {
+      padding: 30px 20px;
       text-align: center;
-      margin-top: 80px;
-      font-size: 1rem;
-      color: #888;
-      user-select: none;
-      padding-bottom: 40px;
     }
-
-    /* Responsivo */
-    @media(max-width: 480px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header p {
-        font-size: 1.2rem;
-      }
-      .whatsapp-button {
-        font-size: 1.1rem;
-        padding: 14px 24px;
-      }
-      form {
-        max-width: 100%;
-      }
+    .faq {
+      max-width: 800px;
+      margin: auto;
+      text-align: left;
+    }
+    .faq h3 {
+      cursor: pointer;
+      background: #111;
+      padding: 15px;
+      border-bottom: 1px solid #444;
+      margin: 0;
+    }
+    .faq-content {
+      display: none;
+      padding: 15px;
+      background: #222;
+      border-bottom: 1px solid #444;
+    }
+    form {
+      max-width: 500px;
+      margin: 30px auto;
+      text-align: left;
+    }
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 6px;
+    }
+    input {
+      background: #333;
+      color: #fff;
+    }
+    button {
+      background: #e91e63;
+      color: #fff;
+      font-weight: bold;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.8);
+      color: white;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+    .popup-content {
+      background: #111;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .top-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #444;
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 8px;
+      cursor: pointer;
+      display: none;
     }
   </style>
+  <script>
+    window.onload = function () {
+      const faqs = document.querySelectorAll(".faq h3");
+      faqs.forEach((faq) => {
+        faq.addEventListener("click", () => {
+          const content = faq.nextElementSibling;
+          content.style.display = content.style.display === "block" ? "none" : "block";
+        });
+      });
+
+      const topBtn = document.querySelector(".top-button");
+      window.onscroll = () => {
+        topBtn.style.display = window.scrollY > 200 ? "block" : "none";
+      };
+    };
+
+    function openPopup() {
+      document.getElementById("popup").style.display = "flex";
+    }
+
+    function closePopup() {
+      document.getElementById("popup").style.display = "none";
+    }
+  </script>
 </head>
 <body>
+
   <!-- Google Tag Manager (noscript) -->
-  <noscript>
-    <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7F8RBZX"
-    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-  </noscript>
-  <!-- End Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7F8RBZX"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+  <header>
+    <h1>Mentira Milionária</h1>
+    <h2>A verdade que ninguém te contou sobre marketing digital, autoridade e poder digital.</h2>
+    <a class="btn-whatsapp" href="https://wa.me/5534997968526?text=Quero%20baixar%20o%20eBook%20Mentira%20Milionária!" target="_blank">Baixar via WhatsApp</a>
+  </header>
 
   <div class="container">
-    <header>
-      <h1>Mentoria Mentira Milionária</h1>
-      <p>Transformando Vítimas do Marketing em Máquinas de Autoridade Real</p>
-    </header>
+    <h2>📘 Receba também por e-mail:</h2>
+    <form action="https://formsubmit.co/mentiramilionariaoficial@gmail.com" method="POST" onsubmit="openPopup()">
+      <input type="email" name="email" placeholder="Seu melhor e-mail" required />
+      <input type="hidden" name="_next" value="https://mentiramilionaria.github.io" />
+      <input type="hidden" name="_captcha" value="false" />
+      <button type="submit">Enviar e Receber por E-mail</button>
+    </form>
 
-    <section>
-      <h2>Baixe o eBook gratuito e receba os primeiros segredos.</h2>
-      <p>Se fizer sentido para você, a mentoria te espera para levar seu negócio para outro nível.</p>
+    <div class="faq">
+      <h2>❓ Dúvidas Frequentes</h2>
 
-      <div class="button-container">
-        <a 
-          href="https://wa.me/5534997968526?text=Ol%C3%A1%2C%20quero%20garantir%20meu%20acesso%20ao%20Grupo%20VIP%20de%20Pr%C3%A9-venda%20da%20Mentoria%20Mentira%20Milion%C3%A1ria.%20Gostaria%20de%20saber%20mais%20sobre%20os%20b%C3%B4nus%20e%20conte%C3%BAdos%20exclusivos." 
-          target="_blank" rel="noopener noreferrer" class="whatsapp-button"
-        >
-          GARANTIR MEU ACESSO PELO WHATSAPP
-        </a>
-      </div>
+      <h3>O eBook é realmente gratuito?</h3>
+      <div class="faq-content">Sim, 100% gratuito. Basta clicar no botão e você receberá o conteúdo.</div>
 
-      <h3>Não conseguiu pelo WhatsApp? Receba o eBook por e-mail:</h3>
-      <form id="backup-form">
-        <label for="email">Digite seu melhor e-mail:</label>
-        <input type="email" id="email" name="email" placeholder="seuemail@exemplo.com" required />
-        <button type="submit">Enviar Link por E-mail</button>
-      </form>
-      <div id="success-message">Link enviado com sucesso! Verifique seu e-mail.</div>
+      <h3>Preciso fornecer meu e-mail?</h3>
+      <div class="faq-content">Não é obrigatório, mas recomendamos para receber atualizações e acesso direto caso o WhatsApp falhe.</div>
 
-      <h2>Perguntas Frequentes</h2>
+      <h3>Qual o conteúdo do eBook?</h3>
+      <div class="faq-content">Você vai descobrir os bastidores obscuros do marketing digital, como criar autoridade real e evitar golpes comuns.</div>
 
-      <div class="faq-item">
-        <div class="faq-question">Essa mentoria é pra quem está começando?</div>
-        <div class="faq-answer">Sim. Ela foi feita pra quem quer construir autoridade real do zero, mesmo sem experiência ou seguidores.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Vai ter suporte se eu tiver dúvida?</div>
-        <div class="faq-answer">Sim. Você terá acesso direto ao mentor e ao grupo fechado para tirar dúvidas e receber orientação.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Vou ter que aparecer ou vender no Instagram?</div>
-        <div class="faq-answer">Não. Aqui você aprende a construir autoridade do seu jeito, com verdade, sem precisar de dancinhas ou exposição forçada.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">E se eu não gostar da mentoria?</div>
-        <div class="faq-answer">Você tem garantia de satisfação. Se não fizer sentido, pode sair. Mas dificilmente vai querer depois do primeiro módulo.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Quanto tempo dura a mentoria?</div>
-        <div class="faq-answer">O acesso é contínuo com atualizações. Você faz no seu ritmo, com missões e acompanhamento.</div>
-      </div>
-
-    </section>
-
-    <footer>
-      <p>Você não entrou aqui pra brincar de marketing.<br />Entrou pra dominar.<br /><strong>Agora é contigo.</strong></p>
-    </footer>
+    </div>
   </div>
 
-  <script>
-    // FAQ toggle
-    const faqs = document.querySelectorAll('.faq-question');
-    faqs.forEach(faq => {
-      faq.addEventListener('click', () => {
-        faq.classList.toggle('active');
-        const answer = faq.nextElementSibling;
-        if (answer.classList.contains('open')) {
-          answer.classList.remove('open');
-        } else {
-          answer.classList.add('open');
-        }
-      });
-    });
+  <div class="popup" id="popup" onclick="closePopup()">
+    <div class="popup-content">
+      <h2>✅ Enviado com sucesso!</h2>
+      <p>Confira seu WhatsApp e e-mail para acessar o eBook.</p>
+      <button onclick="closePopup()">Fechar</button>
+    </div>
+  </div>
 
-    // Form submission simulation (since formsubmit.co is external)
-    const form = document.getElementById('backup-form');
-    const successMessage = document.getElementById('success-message');
+  <div class="top-button" onclick="scrollTo({ top: 0, behavior: 'smooth' })">↑ Topo</div>
 
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const email
+</body>
+</html>
