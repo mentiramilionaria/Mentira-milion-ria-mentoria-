@@ -1,191 +1,178 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mentira Milionária</title>
-  <meta name="description" content="A verdade que ninguém te contou sobre marketing digital, autoridade e poder digital." />
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" />
-  <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-W7F8RBZX"></script>
+  <title>Mentoria Mentira Milionária</title>
+  <meta name="description" content="Transforme-se com a Mentoria Mentira Milionária. Baixe o eBook gratuito e entre para o jogo dos bastidores do marketing e da autoridade digital." />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
   <style>
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
-      background: #000;
+      background-color: #111;
       color: #fff;
-      overflow-x: hidden;
     }
+
     header {
-      background: linear-gradient(to bottom, rgba(0,0,0,0.8), rgba(0,0,0,0.95)), url('fundo.jpg') no-repeat center center;
-      background-size: cover;
-      padding: 100px 20px 60px;
+      background: url('capa-final.jpg') no-repeat center center/cover;
+      padding: 80px 20px;
       text-align: center;
     }
-    h1 {
+
+    header h1 {
       font-size: 3em;
-      margin: 0;
-      color: #fff;
+      margin-bottom: 20px;
     }
-    h2 {
-      font-size: 1.5em;
-      margin-top: 10px;
-      color: #f0f0f0;
+
+    header p {
+      font-size: 1.3em;
+      font-weight: 400;
+      max-width: 600px;
+      margin: auto;
     }
-    .btn-whatsapp {
-      background: #25d366;
-      color: white;
-      padding: 15px 25px;
+
+    .cta {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .cta a {
+      background-color: #00ff99;
+      color: #000;
+      padding: 15px 30px;
+      border-radius: 40px;
       text-decoration: none;
       font-weight: bold;
-      font-size: 1.2em;
-      border-radius: 10px;
-      display: inline-block;
-      margin-top: 20px;
+      transition: background 0.3s ease;
     }
-    .container {
-      padding: 30px 20px;
-      text-align: center;
+
+    .cta a:hover {
+      background-color: #00cc7a;
     }
+
     .faq {
       max-width: 800px;
-      margin: auto;
-      text-align: left;
+      margin: 60px auto;
     }
-    .faq h3 {
-      cursor: pointer;
-      background: #111;
+
+    .faq h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .faq details {
+      background-color: #1e1e1e;
+      margin-bottom: 10px;
       padding: 15px;
-      border-bottom: 1px solid #444;
-      margin: 0;
-    }
-    .faq-content {
-      display: none;
-      padding: 15px;
-      background: #222;
-      border-bottom: 1px solid #444;
-    }
-    form {
-      max-width: 500px;
-      margin: 30px auto;
-      text-align: left;
-    }
-    input, button {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 6px;
-    }
-    input {
-      background: #333;
-      color: #fff;
-    }
-    button {
-      background: #e91e63;
-      color: #fff;
-      font-weight: bold;
-    }
-    .popup {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.8);
-      color: white;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-    .popup-content {
-      background: #111;
-      padding: 30px;
       border-radius: 10px;
-      text-align: center;
     }
-    .top-button {
+
+    .formulario {
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .formulario input {
+      padding: 10px;
+      margin: 10px;
+      border-radius: 8px;
+      border: none;
+      width: 250px;
+    }
+
+    .formulario button {
+      padding: 10px 20px;
+      background-color: #00ff99;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .topo {
       position: fixed;
       bottom: 20px;
       right: 20px;
-      background: #444;
-      color: #fff;
+      background-color: #00ff99;
+      color: #000;
       padding: 10px 15px;
-      border-radius: 8px;
+      border-radius: 50%;
+      font-size: 20px;
       cursor: pointer;
-      display: none;
+    }
+
+    @keyframes fadeInUp {
+      0% { opacity: 0; transform: translateY(30px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+
+    .animado {
+      animation: fadeInUp 1s ease-out;
     }
   </style>
+
+  <!-- Google Tag Manager -->
   <script>
-    window.onload = function () {
-      const faqs = document.querySelectorAll(".faq h3");
-      faqs.forEach((faq) => {
-        faq.addEventListener("click", () => {
-          const content = faq.nextElementSibling;
-          content.style.display = content.style.display === "block" ? "none" : "block";
-        });
-      });
-
-      const topBtn = document.querySelector(".top-button");
-      window.onscroll = () => {
-        topBtn.style.display = window.scrollY > 200 ? "block" : "none";
-      };
-    };
-
-    function openPopup() {
-      document.getElementById("popup").style.display = "flex";
-    }
-
-    function closePopup() {
-      document.getElementById("popup").style.display = "none";
-    }
+    (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W7F8RBZX');
   </script>
+  <!-- End Google Tag Manager -->
 </head>
-<body>
 
+<body>
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W7F8RBZX"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-  <header>
-    <h1>Mentira Milionária</h1>
-    <h2>A verdade que ninguém te contou sobre marketing digital, autoridade e poder digital.</h2>
-    <a class="btn-whatsapp" href="https://wa.me/5534997968526?text=Quero%20baixar%20o%20eBook%20Mentira%20Milionária!" target="_blank">Baixar via WhatsApp</a>
+  <header class="animado">
+    <h1>Mentoria Mentira Milionária</h1>
+    <p>A verdade que ninguém te contou sobre marketing digital, autoridade e poder digital</p>
   </header>
 
-  <div class="container">
-    <h2>📘 Receba também por e-mail:</h2>
-    <form action="https://formsubmit.co/mentiramilionariaoficial@gmail.com" method="POST" onsubmit="openPopup()">
-      <input type="email" name="email" placeholder="Seu melhor e-mail" required />
-      <input type="hidden" name="_next" value="https://mentiramilionaria.github.io" />
-      <input type="hidden" name="_captcha" value="false" />
-      <button type="submit">Enviar e Receber por E-mail</button>
+  <div class="cta animado">
+    <a href="https://wa.me/5534997968526?text=Quero%20participar%20da%20Mentoria%20Mentira%20Milionária%20e%20baixar%20o%20eBook%20gratuito.">QUERO PARTICIPAR</a>
+  </div>
+
+  <section class="formulario animado">
+    <h2>Não conseguiu acessar o WhatsApp?</h2>
+    <p>Preencha seu e-mail abaixo para receber o eBook e as instruções da mentoria.</p>
+    <form action="https://formsubmit.co/mentiramilionariaoficial@gmail.com" method="POST">
+      <input type="email" name="email" placeholder="Seu e-mail aqui" required />
+      <input type="hidden" name="_autoresponse" value="Recebemos seu e-mail! Em breve você terá acesso ao material da mentoria.">
+      <input type="hidden" name="_template" value="box">
+      <button type="submit">ENVIAR</button>
     </form>
+  </section>
 
-    <div class="faq">
-      <h2>❓ Dúvidas Frequentes</h2>
+  <section class="faq animado">
+    <h2>Perguntas Frequentes</h2>
+    <details>
+      <summary>O que é a Mentoria Mentira Milionária?</summary>
+      <p>É um programa avançado que revela os bastidores do marketing, desmascara falsas promessas e ensina como construir autoridade real.</p>
+    </details>
+    <details>
+      <summary>Como acesso o eBook?</summary>
+      <p>Basta clicar no botão de WhatsApp ou preencher seu e-mail para receber automaticamente.</p>
+    </details>
+    <details>
+      <summary>Preciso pagar algo?</summary>
+      <p>O eBook é gratuito. A mentoria tem conteúdo pago e exclusivo para quem deseja dar o próximo passo.</p>
+    </details>
+  </section>
 
-      <h3>O eBook é realmente gratuito?</h3>
-      <div class="faq-content">Sim, 100% gratuito. Basta clicar no botão e você receberá o conteúdo.</div>
+  <div class="topo" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</div>
 
-      <h3>Preciso fornecer meu e-mail?</h3>
-      <div class="faq-content">Não é obrigatório, mas recomendamos para receber atualizações e acesso direto caso o WhatsApp falhe.</div>
-
-      <h3>Qual o conteúdo do eBook?</h3>
-      <div class="faq-content">Você vai descobrir os bastidores obscuros do marketing digital, como criar autoridade real e evitar golpes comuns.</div>
-
-    </div>
-  </div>
-
-  <div class="popup" id="popup" onclick="closePopup()">
-    <div class="popup-content">
-      <h2>✅ Enviado com sucesso!</h2>
-      <p>Confira seu WhatsApp e e-mail para acessar o eBook.</p>
-      <button onclick="closePopup()">Fechar</button>
-    </div>
-  </div>
-
-  <div class="top-button" onclick="scrollTo({ top: 0, behavior: 'smooth' })">↑ Topo</div>
-
+  <script>
+    // Popup de agradecimento
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('success') === 'true') {
+      alert('E-mail enviado com sucesso! Verifique sua caixa de entrada.');
+    }
+  </script>
 </body>
 </html>
