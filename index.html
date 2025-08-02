@@ -1,126 +1,70 @@
-<!DOCTYPE html>
-<html lang="pt-br">
+<!DOCTYPE html><html lang="pt-br">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Baixe gratuitamente o eBook Mentira Milionária e entre no grupo VIP da mentoria." />
   <title>Mentira Milionária</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
   <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #111;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-    header, section, footer {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    h1, h2 {
-      color: #00ff88;
-    }
-    .whatsapp-btn {
-      display: inline-block;
-      background-color: #25D366;
-      color: white;
-      padding: 1rem 2rem;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-top: 20px;
-    }
-    .faq {
-      margin-top: 2rem;
-    }
-    .faq-item {
-      margin-bottom: 1rem;
-    }
-    .faq-item strong {
-      color: #00ff88;
-    }
-    .mentoria-bloco {
-      background-color: #1a1a1a;
-      padding: 2rem;
-      border-radius: 20px;
-      margin-top: 3rem;
-    }
-    .mentoria-bloco ul {
-      list-style: none;
-      padding: 0;
-    }
-    .mentoria-bloco li::before {
-      content: "✅ ";
-      color: #00ff88;
-    }
-    .cta-final {
-      text-align: center;
-      margin-top: 2rem;
-    }
+    body { margin: 0; font-family: 'Inter', sans-serif; background-color: #0d0d0d; color: #ffffff; }
+    header, section, footer { padding: 20px; }
+    .hero { text-align: center; padding: 60px 20px; background-color: #111111; }
+    .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .hero p { font-size: 1.2rem; margin-bottom: 30px; }
+    .btn { display: inline-block; padding: 15px 25px; font-size: 1rem; font-weight: bold; color: #fff; background-color: #25d366; border: none; border-radius: 8px; text-decoration: none; }
+    .faq { max-width: 800px; margin: 40px auto; }
+    .faq h2 { text-align: center; margin-bottom: 20px; }
+    .faq-item { background: #1a1a1a; margin-bottom: 10px; padding: 15px; border-radius: 8px; cursor: pointer; }
+    .faq-item.active .answer { display: block; }
+    .faq-item .answer { display: none; margin-top: 10px; }
+    .mentoria { background-color: #141414; padding: 40px 20px; text-align: center; }
+    .mentoria h2 { font-size: 2rem; margin-bottom: 10px; }
+    .mentoria p { font-size: 1.1rem; margin-bottom: 20px; }
+    .mentoria ul { list-style: none; padding: 0; text-align: left; max-width: 600px; margin: 0 auto 30px; }
+    .mentoria ul li { padding: 10px 0; border-bottom: 1px solid #333; }
+    .footer { text-align: center; padding: 20px; font-size: 0.9rem; background: #0a0a0a; }
   </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.addEventListener('click', () => {
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
 </head>
 <body>
-
-  <header>
+  <header class="hero">
     <h1>Mentira Milionária</h1>
-    <p><strong>A verdade que ninguém te contou sobre marketing digital, autoridade e poder digital.</strong></p>
-    <a class="whatsapp-btn" href="https://wa.me/5534997968526?text=Ol%C3%A1%2C+quero+receber+o+eBook+Mentira+Milion%C3%A1ria+e+entrar+no+grupo+VIP+da+mentoria+exclusiva%21">
-      📲 Receber eBook e Entrar no Grupo VIP
-    </a>
-  </header>
-
-  <section class="mentoria-bloco">
-    <h2>👑 Conheça a Mentoria Mentira Milionária</h2>
+    <p>A verdade que ninguém te contou sobre marketing digital, autoridade e poder digital.</p>
+    <a class="btn" href="https://api.whatsapp.com/send?phone=5534997968526&text=Ol%C3%A1!%20Quero%20receber%20o%20eBook%20*Mentira%20Milion%C3%A1ria*%20gratuito.%0ALink%20direto%20para%20o%20download:%20https://drive.google.com/file/d/11KQyky_KXnfil_uIqq9yZTGx2Qr0OOd6/view?usp=drivesdk%0A%0ATamb%C3%A9m%20tenho%20interesse%20na%20mentoria%20exclusiva%20e%20no%20grupo%20VIP%20com%20acesso%20antecipado%20aos%20conte%C3%BAdos!" target="_blank">Baixar eBook via WhatsApp</a>
+  </header>  <section class="mentoria">
+    <h2>Conheça a Mentoria Mentira Milionária 🚀</h2>
     <p>Transformando vítimas do marketing em máquinas de autoridade real.</p>
-
     <ul>
-      <li>Desmascare os bastidores da falsa ostentação</li>
-      <li>Aprenda a construir influência de verdade</li>
-      <li>Use seu conhecimento para atrair clientes de alto valor</li>
-      <li>Receba acesso antecipado aos módulos da mentoria</li>
-      <li>Seja um dos primeiros do grupo VIP exclusivo</li>
+      <li>✅ Acesso antecipado aos bastidores da autoridade</li>
+      <li>✅ Grupo VIP com conteúdos exclusivos</li>
+      <li>✅ Estratégias reais, sem ostentação fake</li>
+      <li>✅ Mentoria com foco em posicionamento e poder digital</li>
     </ul>
-
-    <div class="cta-final">
-      <a class="whatsapp-btn" href="https://wa.me/5534997968526?text=Ol%C3%A1%2C+quero+receber+o+eBook+Mentira+Milion%C3%A1ria+e+entrar+no+grupo+VIP+da+mentoria+exclusiva%21">
-        🔥 Garantir meu Acesso VIP
-      </a>
-    </div>
-  </section>
-
-  <section class="faq">
-    <h2>❓ Perguntas Frequentes</h2>
+    <a class="btn" href="https://api.whatsapp.com/send?phone=5534997968526&text=Quero%20entrar%20para%20a%20Mentoria%20Mentira%20Milion%C3%A1ria%20e%20ter%20acesso%20ao%20Grupo%20VIP!" target="_blank">Entrar no Grupo VIP</a>
+  </section>  <section class="faq">
+    <h2>Perguntas Frequentes ❓</h2>
     <div class="faq-item">
       <strong>O eBook é realmente gratuito?</strong>
-      <p>Sim! Basta clicar no botão e você receberá gratuitamente pelo WhatsApp e por e-mail.</p>
+      <div class="answer">Sim! Basta clicar no botão e você recebe o link direto para download via WhatsApp ou e-mail.</div>
     </div>
     <div class="faq-item">
-      <strong>O que é o grupo VIP?</strong>
-      <p>É um grupo exclusivo com conteúdos antecipados da mentoria e acesso prioritário ao lançamento oficial.</p>
+      <strong>O que tem dentro da mentoria?</strong>
+      <div class="answer">Conteúdos avançados sobre construção de autoridade, marketing real e estratégias sem manipulação.</div>
     </div>
     <div class="faq-item">
-      <strong>Quando a mentoria será lançada?</strong>
-      <p>Em breve! Quem estiver no grupo VIP saberá tudo antes e ainda terá condições especiais.</p>
+      <strong>Posso entrar no grupo VIP mesmo sem pagar?</strong>
+      <div class="answer">Sim, o grupo é gratuito durante a pré-venda. Depois será fechado para os alunos da mentoria.</div>
     </div>
-  </section>
-
-  <section>
-    <h2>📥 Receber por E-mail</h2>
-    <form action="https://formsubmit.co/mentiramilionariaoficial@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="Novo lead da Mentoria Mentira Milionária!" />
-      <input type="hidden" name="_autoresponse" value="Parabéns! Aqui está o link do seu eBook Mentira Milionária: https://drive.google.com/file/d/11KQyky_KXnfil_uIqq9yZTGx2Qr0OOd6/view?usp=drivesdk. Você também receberá acesso ao grupo VIP da mentoria em breve!" />
-      <input type="email" name="email" required placeholder="Digite seu e-mail" style="padding:1rem; width:100%; border-radius:10px; margin-bottom:10px;">
-      <button type="submit" style="padding:1rem 2rem; background-color:#00ff88; color:#000; border:none; border-radius:10px; font-weight:bold;">
-        📩 Receber por E-mail
-      </button>
-    </form>
-  </section>
-
-  <footer style="text-align:center; margin-top:4rem;">
-    <p>&copy; 2025 Mentira Milionária. Todos os direitos reservados.</p>
+  </section>  <footer class="footer">
+    &copy; 2025 Mentira Milionária · Todos os direitos reservados
   </footer>
-
 </body>
 </html>
